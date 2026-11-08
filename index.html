@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#11111b">
+  <meta name="description" content="NOVA NOTES - یادداشت‌های شخصی">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <title>NOVA NOTES</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><span>NOVA NOTES</span></div>
+      <button id="installBtn" class="install-btn" hidden>نصب برنامه</button>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <button id="newBtn" class="primary-btn">＋ یادداشت جدید</button>
+        <label class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="جست‌وجوی یادداشت‌ها..."></label>
+        <div class="section-label">یادداشت‌های من</div>
+        <div id="noteList" class="note-list"></div>
+        <div id="noteCount" class="note-count">۰ یادداشت</div>
+      </aside>
+
+      <section class="editor">
+        <div class="editor-toolbar">
+          <span id="dateLabel" class="date-label">یک یادداشت انتخاب کن</span>
+          <div class="actions">
+            <button id="pinBtn" class="soft-btn" disabled>☆ سنجاق</button>
+            <button id="deleteBtn" class="danger-btn" disabled>حذف</button>
+          </div>
+        </div>
+        <input id="noteTitle" class="title-input" placeholder="عنوان یادداشت..." disabled maxlength="120">
+        <div class="rule"></div>
+        <textarea id="noteContent" placeholder="اینجا بنویس..." disabled></textarea>
+        <div class="status-row"><span id="status">● آماده</span><span>ذخیره خودکار روی همین دستگاه</span></div>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

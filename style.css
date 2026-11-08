@@ -1,0 +1,33 @@
+*{box-sizing:border-box} :root{color-scheme:dark;--bg:#11111b;--panel:#191927;--purple:#8b5cf6;--text:#f4f0ff;--muted:#9290a5;--card:#252537}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh}
+button,input,textarea{font:inherit}.app-shell{max-width:1200px;margin:auto;min-height:100vh;padding:18px}
+.topbar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 14px}
+.brand{font-size:21px;font-weight:800;letter-spacing:.5px;direction:ltr}.brand-mark{color:#a78bfa;margin-right:8px}
+.layout{display:grid;grid-template-columns:290px minmax(0,1fr);gap:16px;min-height:calc(100vh - 100px)}
+.sidebar,.editor{background:var(--panel);border:1px solid #29263c;border-radius:20px;padding:18px}
+.sidebar{display:flex;flex-direction:column;min-height:500px}
+.primary-btn,.install-btn{border:0;border-radius:12px;background:var(--purple);color:white;padding:13px 16px;font-weight:bold;cursor:pointer;transition:transform .16s,filter .16s}
+.primary-btn:active,.install-btn:active,.soft-btn:active,.danger-btn:active{transform:scale(.96)}
+.primary-btn:hover,.install-btn:hover{filter:brightness(1.12)}
+.search-wrap{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid #39364f;border-radius:11px;padding:0 12px;margin:14px 0}
+.search-wrap span{font-size:25px;color:#a78bfa}.search-wrap input{width:100%;background:transparent;border:0;outline:0;color:var(--text);padding:12px 0}
+.section-label{font-size:12px;color:var(--muted);font-weight:bold;margin:10px 5px}
+.note-list{display:flex;flex-direction:column;gap:7px;overflow:auto;flex:1}
+.note-item{border:1px solid transparent;background:transparent;color:var(--text);border-radius:10px;padding:12px;text-align:right;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:slideIn .24s both}
+.note-item:hover{background:#29263c}.note-item.active{background:#34304d;border-color:#514477}
+.note-count{font-size:11px;color:var(--muted);text-align:center;padding-top:14px}
+.editor{display:flex;flex-direction:column;min-width:0;animation:fadeIn .45s both}
+.editor-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.date-label{font-size:12px;color:var(--muted)}
+.actions{display:flex;gap:7px}.soft-btn,.danger-btn{border:0;border-radius:10px;padding:9px 13px;color:var(--text);cursor:pointer;transition:transform .16s,background .16s}
+.soft-btn{background:var(--card)}.danger-btn{background:#572b3b}.soft-btn:disabled,.danger-btn:disabled{opacity:.4;cursor:not-allowed}
+.title-input{margin-top:24px;background:transparent;border:0;outline:0;color:var(--text);font-size:26px;font-weight:bold;padding:10px 2px;width:100%}
+.title-input::placeholder,textarea::placeholder{color:#77748b}
+.rule{height:1px;background:#29263c;margin:10px 0}
+textarea{flex:1;min-height:300px;resize:none;background:transparent;border:0;outline:0;color:var(--text);font-size:16px;line-height:2;padding:10px 2px}
+.status-row{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:11px;padding-top:10px}
+#status{color:#a78bfa}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;background:#29263c;border:1px solid #514477;border-radius:12px;padding:11px 17px;transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:translateX(0)}}
+@media(max-width:720px){.app-shell{padding:10px}.topbar{height:54px}.brand{font-size:18px}.layout{grid-template-columns:1fr;min-height:calc(100vh - 75px)}.sidebar{min-height:unset;padding:13px}.note-list{max-height:150px}.editor{min-height:55vh;padding:15px}.title-input{font-size:22px;margin-top:16px}textarea{min-height:220px}.status-row{font-size:10px}}
+@media(min-width:721px){.sidebar{height:calc(100vh - 100px);position:sticky;top:18px}.editor{min-height:calc(100vh - 100px)}}
